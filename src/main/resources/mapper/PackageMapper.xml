@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tws.repository.PackageMapper">
+    <select id="select" resultType="tws.entity.Package">
+        select * from `package`;
+    </select>
+
+    <insert id="insert" parameterType="tws.entity.Package">
+        insert into package
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="billNo != null">
+                billNo,
+            </if>
+            <if test="addressee != null">
+                addressee,
+            </if>
+            <if test="photo != null">
+                photo,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="weight != null">
+                weight,
+            </if>
+            <if test="pickTime != null">
+                pickTime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="billNo != null">
+                #{billNo},
+            </if>
+            <if test="addressee != null">
+                #{addressee},
+            </if>
+            <if test="photo != null">
+                #{photo},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+            <if test="weight != null">
+                #{weight},
+            </if>
+            <if test="pickTime != null">
+                #{pickTime},
+            </if>
+        </trim>
+    </insert>
+</mapper>

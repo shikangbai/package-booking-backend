@@ -1,0 +1,1 @@
+insert into package(billNo,addressee,photo,status,pickTime,weight) values('201907820','syf','1882282882','1',to_timestamp('2016-01-01 00:00:00','yyyy-mm-dd hh24:mi:ss'),'20')
